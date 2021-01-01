@@ -1,3 +1,4 @@
+import string
 from time import time
 
 
@@ -31,7 +32,7 @@ def bruteforce_generator(chars, min_length=3, max_length=20):
         n += 1
 
 
-def find_passw(passw, chars):
+def find_passw(passw, chars=string.printable):
     t = Timer("Finding n={}".format(len(passw)))
     for i in bruteforce_generator(chars, min_length=3, max_length=len(passw)):
         if i == passw:
