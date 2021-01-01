@@ -4,11 +4,11 @@ from time import time
 
 class Timer(object):
     def __init__(self, name):
-        self.start = time()
+        self.start = time() * 1000
         self.name = name
 
     def stop(self):
-        td = int(time() - self.start) * 1000
+        td = int(time() * 1000  - self.start)
         print("{} took {}ms".format(self.name, td))
 
 
